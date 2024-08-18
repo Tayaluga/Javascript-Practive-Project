@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clock</title>
+</head>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: salmon;
+  font-family: "Permanent Marker", cursive;
+}
+</style>
+
+<body>
+  <div class="clock">
+    <div class="numbers">
+      <div class="twelve">12</div>
+      <div class="three">3</div>
+      <div class="six">6</div>
+      <div class="nine">9</div>
+    </div>
+    <div class="arrows">
+      <div class="hour"></div>
+      <div class="minute"></div>
+      <div class="second"></div>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Rolex_logo.svg/1200px-Rolex_logo.svg.png" alt="" />
+  </div>
+  <script>
+    const containerEl = document.querySelector(".container");
+
+    const careers = ["YouTuber", "Web Developer", "Freelancer", "Instructor"];
+
+    let careerIndex = 0;
+
+    let characterIndex = 0;
+
+    updateText();
+
+    function updateText() {
+      characterIndex++;
+      containerEl.innerHTML = `
+    <h1>I am ${careers[careerIndex].slice(0, 1) === "I" ? "an" : "a"} ${careers[
+          careerIndex
+        ].slice(0, characterIndex)}</h1>
+    `;
+
+      if (characterIndex === careers[careerIndex].length) {
+        careerIndex++;
+        characterIndex = 0;
+      }
+
+      if (careerIndex === careers.length) {
+        careerIndex = 0;
+      }
+      setTimeout(updateText, 400);
+    }
+  </script>
+</body>
+
+</html>
