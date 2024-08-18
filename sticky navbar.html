@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Navbar</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .top-container {
+        background-image: url("/Pics/Mic\ speaker\ microphone\ \(1\).jpeg");
+        height: 100vh;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .top-container h1 {
+        color: white;
+        font-size: 50px;
+        font-family:sans-serif;
+        letter-spacing: 2px;
+    }
+
+    .text {
+        margin: 50px 5%;
+        font-family: sans-serif;
+    }
+
+    .navbar {
+        display: flex;
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.4s;
+    }
+
+    .navbar ul {
+        display: flex;
+        list-style-type: none;
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        margin: 0 10px;
+        color: black;
+        font-family: oswald;
+        font-size: 1.2rem;
+        font-weight: bolder;
+    }
+
+    .navbar ul li a:hover {
+        color: red;
+    }
+    .navbar a img{
+        height: 2rem;
+    }
+    .navbar.active {
+        background-color: black;
+    }
+
+    .navbar.active ul li a {
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <a href="/index.html"><img src="/Pics/Heart animation heart.png" alt="logo" /></a>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="top-container">
+        <h1>Welcome to our website</h1>
+    </div>
+    <div class="bottom-container">
+        <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tempore
+            explicabo veritatis dignissimos accusantium nostrum voluptatum qui
+            labore, natus mollitia voluptatem. Ipsa ducimus eos saepe expedita ex
+            laboriosam optio omnis amet, qui veritatis unde aut tempora. Fuga et
+            sint autem amet, modi, veniam dolorum placeat blanditiis rerum doloribus
+            aliquid voluptas. Alias voluptatum id vel minima voluptates assumenda
+            accusantium consectetur culpa necessitatibus sint cum perspiciatis
+            laboriosam sequi praesentium, eos numquam! Eum, officia fugiat
+            reprehenderit eligendi itaque similique! Harum, quod vitae explicabo
+            sint ad illum expedita quisquam earum? Necessitatibus illo tempore
+            sapiente commodi quae, qui quasi odit fugiat impedit mollitia eveniet
+            maiores?
+        </p>
+        <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tempore
+            explicabo veritatis dignissimos accusantium nostrum voluptatum qui
+            labore, natus mollitia voluptatem. Ipsa ducimus eos saepe expedita ex
+            laboriosam optio omnis amet, qui veritatis unde aut tempora. Fuga et
+            sint autem amet, modi, veniam dolorum placeat blanditiis rerum doloribus
+            aliquid voluptas. Alias voluptatum id vel minima voluptates assumenda
+            accusantium consectetur culpa necessitatibus sint cum perspiciatis
+            laboriosam sequi praesentium, eos numquam! Eum, officia fugiat
+            reprehenderit eligendi itaque similique! Harum, quod vitae explicabo
+            sint ad illum expedita quisquam earum? Necessitatibus illo tempore
+            sapiente commodi quae, qui quasi odit fugiat impedit mollitia eveniet
+            maiores?
+        </p>
+        <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tempore
+            explicabo veritatis dignissimos accusantium nostrum voluptatum qui
+            labore, natus mollitia voluptatem. Ipsa ducimus eos saepe expedita ex
+            laboriosam optio omnis amet, qui veritatis unde aut tempora. Fuga et
+            sint autem amet, modi, veniam dolorum placeat blanditiis rerum doloribus
+            aliquid voluptas. Alias voluptatum id vel minima voluptates assumenda
+            accusantium consectetur culpa necessitatibus sint cum perspiciatis
+            laboriosam sequi praesentium, eos numquam! Eum, officia fugiat
+            reprehenderit eligendi itaque similique! Harum, quod vitae explicabo
+            sint ad illum expedita quisquam earum? Necessitatibus illo tempore
+            sapiente commodi quae, qui quasi odit fugiat impedit mollitia eveniet
+            maiores?
+        </p>
+        <p class="text">
+            Economic Structures
+            When it comes to economics, the Netherlands and United States operate on varying scales. The Netherlands
+            boasts a highly advanced and open economy relying quite heavily on international trade, being one of the
+            world’s premier exporters. Rotterdam’s port, among the busiest globally, plays a pivotal role in its market.
+
+            The U.S., however, is the largest economy worldwide. It’s characterized by an immense and diverse industrial
+            foundation. Technology titans such as Apple and Google, financial powerhouses like Wall Street, along with a
+            huge consumer base define the U.S. economy. Despite its enormous size and impact, the U.S. market faces
+            challenges, including income inequality and periodic financial crises.
+
+        </p>
+        <p class="text">
+            A report in Politico, a US-based news publication, claims that Saudi Crown Prince Mohammed bin Salman is
+            under threat of assassination for trying to normalize relations with Israel. The report said that the Saudi
+            crown prince told members of the US Congress that he was risking his life by seeking better relations with
+            Israel and the US, including improving relations between Saudi Arabia and Israel.
+
+            Political Systems
+            Politically, the Netherlands and U.S. adhere to differing structures. The Netherlands has a parliamentary
+            democracy while the U.S. has a presidential system. Both aim to serve citizens through representation, yet
+            their approaches diverge. The Netherlands parliament consists of elected members proportionally representing
+            the multi-party system. In contrast, American politics involves electing a president not directly by popular
+            vote but via an electoral college system involving the Senate and House of Representatives.
+        </p>
+    </div>
+    <script>
+        const navbarEl = document.querySelector(".navbar");
+
+        const bottomContainerEl = document.querySelector(".bottom-container");
+
+        console.log(navbarEl.offsetHeight);
+
+        console.log(bottomContainerEl.offsetTop);
+
+        window.addEventListener("scroll", () => {
+            if (
+                window.scrollY >
+                bottomContainerEl.offsetTop - navbarEl.offsetHeight - 50
+            ) {
+                navbarEl.classList.add("active");
+            } else {
+                navbarEl.classList.remove("active");
+            }
+        });
+    </script>
+</body>
+
+</html>
