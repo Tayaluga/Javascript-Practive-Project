@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Modal with Transition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #openModalBtn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #openModalBtn:hover {
+            background-color: #0056b3;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .show {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-open .modal-content {
+            transform: translateY(0);
+        }
+
+        /* Button inside modal */
+        .modal-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .modal-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Button to open the modal -->
+    <button id="openModalBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Modal Title</h2>
+            <p>This is a simple modal popup with a button inside.</p>
+            <button class="modal-button" id="modalAlertBtn">Click Me</button>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("openModalBtn");
+        var span = document.getElementsByClassName("close")[0];
+        var alertBtn = document.getElementById("modalAlertBtn");
+
+        btn.onclick = function() {
+            modal.classList.add("show");
+            setTimeout(() => {
+                modal.classList.add("modal-open");
+            }, 10); // small delay to trigger the animation
+        }
+
+        span.onclick = function() {
+            modal.classList.remove("modal-open");
+            setTimeout(() => {
+                modal.classList.remove("show");
+            }, 300); // wait for the transition to complete
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.classList.remove("modal-open");
+                setTimeout(() => {
+                    modal.classList.remove("show");
+                }, 300);
+            }
+        }
+
+        alertBtn.onclick = function() {
+            alert("Button inside the modal clicked!");
+        }
+    </script>
+
+</body>
+</html>

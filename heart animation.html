@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Animation</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(24, 24, 24);
+    }
+    body{
+        overflow: hidden;
+        width: 0;
+        height: 100vh;
+    }
+    span {
+        height: 100px;
+        width: 100px;
+        background: url(/Pics/Heart\ animation\ heart.png);
+        position: absolute;
+        background-size: 90px;
+        background-repeat: no-repeat;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        animation: animate 2s linear;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            filter: hue-rotate(0);
+        }
+        
+        100% {
+            transform: translate(-50%, -5000%);
+            opacity: 0;
+            filter: hue-rotate(720deg);
+        }
+    }
+</style>
+
+<body>
+    <span></span>
+</body>
+<script>
+    const bodyE1 = document.querySelector('body')
+
+    bodyE1.addEventListener("mousemove", (event) => {
+        const xPos = event.offsetX
+        const YPos = event.offsetY
+        const spanE1 = document.createElement("span")
+        spanE1.style.left = xPos + "px";
+        spanE1.style.bottom = yPos + "px";
+        const size = Math.random() * 100;
+        spanE1.style.width = size + "px"
+        spanE1.style.height = size + "px"
+        bodyE1.appendChild(spanE1);
+        setTimeout(() => {
+            spanE1.remove();
+        }, 3000);
+    })
+</script>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar with Hover Effect</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #004466;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar li {
+            margin: 0 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            position: relative;
+            display: block;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background-color: #00ccff;
+            transition: width 0.3s ease, left 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar a:hover {
+            color: #00ccff;
+        }
+
+        .navbar a:hover::before {
+            width: 100%;
+            left: 0;
+            transform: none;
+        }
+
+        section {
+            width: 100vw;
+            height: 100vh;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            background-color: #e7e7e7;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #home {
+            background-color: #f4f4f4;
+        }
+
+        #about {
+            background-color: #e1f5fe;
+        }
+
+        #services {
+            background-color: #b3e5fc;
+        }
+
+        #contact {
+            background-color: #81d4fa;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">This is Home</section>
+    <section id="about">This is About</section>
+    <section id="services">This is Services</section>
+    <section id="contact">This is Contact</section>
+</body>
+
+</html>
