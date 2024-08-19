@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Cards</title>
+</head>
+<style>
+*{
+    margin: 0;
+}
+/* Cards */
+#ser {
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 2rem;
+}
+
+.one {
+    background: rgb(0, 162, 255);
+    background-size: 2000% 1000%;
+    border-radius: 10px;
+    height: 15rem;
+    width: 20rem;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.crdtxt {
+    height: 33%;
+    margin: 5px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.crdtxt p {
+    color: white;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    animation: move linear infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+</style>
+<body>    
+    <h2 id="ser">Animated Cards</h2>
+    <div class="cards">
+        <div class="cards-wrapper">
+            <div class="one">
+                <div class="crdimg"><img src="/Icons and images/front end.png" alt=""></div>
+                <div class="crdtxt">
+                    <p>Animated Cards</p>
+                </div>
+            </div>
+            <div class="one">
+                <div class="crdimg"><img src="/Icons and images/video-editor.png" alt=""></div>
+                <div class="crdtxt">
+                    <p>Animated Cards</strong></p>
+                </div>
+            </div>
+            <div class="one">
+                <div class="crdimg"><img src="/Icons and images/content-writing (1).png" alt=""></div>
+                <div class="crdtxt">
+                    <p>Animated Cards</strong></p>
+                </div>
+            </div>
+            <div class="one">
+                <div class="crdimg"><img src="/Icons and images/thumbnail designer.png" alt=""></div>
+                <div class="crdtxt">
+                    <p>Animated Cards</strong></p>
+                </div>
+            </div>
+            <div class="one">
+                <div class="crdimg"><img src="/Icons and images/backend.png" alt=""></div>
+                <div class="crdtxt">
+                    <p>Animated Cards</strong></p>
+                </div>
+            </div>
+            <!-- Duplicate cards for seamless looping -->
+            <div class="one">
+                <div class="crdimg"><img src="/Icons and images/front end.png" alt=""></div>
+                <div class="crdtxt">
+                    <p>Animated Cards</strong></p>
+                </div>
+            </div>
+            <div class="one">
+                <div class="crdimg"><img src="/Icons and images/video-editor.png" alt=""></div>
+                <div class="crdtxt">
+                    <p>Animated Cards</strong></p>
+                </div>
+            </div>
+            <div class="one">
+                <div class="crdimg"><img src="/Icons and images/content-writing (1).png" alt=""></div>
+                <div class="crdtxt">
+                    <p>Animated Cards</strong></p>
+                </div>
+            </div>
+            <div class="one">
+                <div class="crdimg"><img src="/Icons and images/thumbnail designer.png" alt=""></div>
+                <div class="crdtxt">
+                    <p>Animated Cards</strong></p>
+                </div>
+            </div>
+            <div class="one">
+                <div class="crdimg"><img src="/Icons and images/backend.png" alt=""></div>
+                <div class="crdtxt">
+                    <p>Animated Cards</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.cards');
+    const cardsWrapper = document.querySelector('.cards-wrapper');
+    const cards = document.querySelectorAll('.one');
+
+    const updateAnimation = () => {
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 20; // 10px margin on each side
+        const totalWidth = (cardWidth + gap) * cards.length / 2;
+        const duration = (totalWidth / container.clientWidth) * 40; // Adjust speed here
+
+        cardsWrapper.style.animationDuration = `${duration}s`;
+        cardsWrapper.style.animationTimingFunction = 'linear';
+    };
+
+    updateAnimation();
+    window.addEventListener('resize', updateAnimation);
+});
+
+
+</script>
+</html>
